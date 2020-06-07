@@ -1,2 +1,2 @@
 # filecoincloud_client
-ipfs移动端前台
+ipfs云算力平台移动端前台
