@@ -3,7 +3,7 @@
 		
 		<MyHeader :content="indexData.menu"></MyHeader>
 		<MySwiper :content="indexData.banner"></MySwiper>
-		<view class="notice">
+		<!-- <view class="notice">
 			<view class="noticeItem">
 				<image src="../../static/image/icon1.png" mode=""></image>
 				魅族官方直供
@@ -16,8 +16,8 @@
 				<image src="../../static/image/icon3.png" mode=""></image>
 				7 天无理由退货
 			</view>
-		</view>
-		<view class="recommend">
+		</view> -->
+		<!-- <view class="recommend">
 			<view class="recommendItem">
 				<image src="../../static/image/recommend1.png" mode=""></image>
 				<text>魅族 16s Pro</text>
@@ -34,8 +34,8 @@
 				<image src="../../static/image/recommend4.jpg" mode=""></image>
 				<text>以旧换新</text>
 			</view>
-		</view>
-		<view class="adBox">
+		</view> -->
+		<!-- <view class="adBox">
 			<view class="adLeft">
 				<image src="../../static/image/ad1.jpg" mode=""></image>
 			</view>
@@ -43,69 +43,48 @@
 				<image src="../../static/image/ad2.jpg" mode=""></image>
 				<image src="../../static/image/ad3.png" mode=""></image>
 			</view>
-		</view>
+		</view> -->
 		<view class="cateOne">
-			<MyTitle color="#0bbbef">智能手机</MyTitle>
-			<image class="cate1Ad" src="../../static/image/cate1Ad.jpg" mode=""></image>
+			<!-- <MyTitle color="#0bbbef">智能手机</MyTitle>
+			<image class="cate1Ad" src="../../static/image/cate1Ad.jpg" mode=""></image> -->
 			<view class="product">
-				<view class="productItem">
-					<navigator url="../detail/detail">
-					<image src="../../static/image/p1.png" mode=""></image>
-					<text class="productName">魅族 16s Pro</text>
-					<view class="productDetail">
-						<view class="mark">免息</view>
-						<view class="detailInfo">4800W AI三摄 屏幕下指纹</view>
-					</view>
-					<view class="productPrice">
-						<text>￥</text>2699
-					</view>
+				<view class="productItem" v-for="item in goodslist" >
+					<navigator :url="'../detail/detail?id='+item.fccGoodsId" style="margin: 10rpx auto 10rpx 20rpx;">
+						<text  style="line-height: 57rpx;display: block;font-size: 28rpx;width: 100%;display: block;">{{item.fccGoodsName}}</text>
+						<view class="goodsleft" style="width: 50%;">
+							<text style="line-height: 57rpx;display: block;font-size: 28rpx;width: 50%;display: block;">单价: </text>
+							<view class="productPrice">
+								
+								<text style="font-size: 38rpx;">{{item.fccGoodsPrice}} </text>&nbsp;USDT/TB
+							</view>
+						</view>
+						<view class="goodsright" style="width: 50%;">
+							<view>
+								<text   style="line-height: 40rpx;font-size: 28rpx;float: left;">预计日收益：</text>
+								<text   style="line-height: 40rpx;font-size: 28rpx;float: right;padding-right: 30rpx;" >暂无</text>
+							</view>
+							<view>
+								<text   style="line-height: 40rpx;font-size: 28rpx;float: left;">预计日收益：</text>
+								<text   style="line-height: 40rpx;font-size: 28rpx;float: right;padding-right: 30rpx;" >暂无</text>
+							</view>
+							<view>
+								<text   style="line-height: 40rpx;font-size: 28rpx;float: left;">合约周期：</text>
+								<text   style="line-height: 40rpx;font-size: 28rpx;float: right;padding-right: 30rpx;" >暂无</text>
+							</view>
+							<view>
+								<text   style="line-height: 40rpx;font-size: 28rpx;float: left;">交付日期：</text>
+								<text   style="line-height: 47rpx;font-size: 28rpx;float: right;padding-right: 30rpx;" >暂无</text>
+							</view>
+							
+						</view>
+					<!-- <image :src="item." mode=""></image> -->
+					
 					</navigator>
 				</view>
-				<view class="productItem">
-					<navigator url="../detail/detail">
-					<image src="../../static/image/p2.png" mode=""></image>
-					<text class="productName">魅族 16s Pro</text>
-					<view class="productDetail">
-						<view class="mark">免息</view>
-						<view class="detailInfo">4800W AI三摄 屏幕下指纹</view>
-					</view>
-					<view class="productPrice">
-						<text>￥</text>2699
-					</view>
-					</navigator>
-				</view>
-				<view class="productItem">
-					<navigator url="../detail/detail">
-					<image src="../../static/image/p3.png" mode=""></image>
-					<text class="productName">魅族 16s Pro</text>
-					<view class="productDetail">
-						<view class="mark">免息</view>
-						<view class="detailInfo">4800W AI三摄 屏幕下指纹</view>
-					</view>
-					<view class="productPrice">
-						<text>￥</text>2699
-					</view>
-					</navigator>
-				</view>
-				<view class="productItem">
-					<navigator url="../detail/detail">
-					<image src="../../static/image/p4.png" mode=""></image>
-					<text class="productName">魅族 16s Pro</text>
-					<view class="productDetail">
-						<view class="mark">免息</view>
-						<view class="detailInfo">4800W AI三摄 屏幕下指纹</view>
-					</view>
-					<view class="productPrice">
-						<text>￥</text>2699
-					</view>
-					</navigator>
-				</view>
-				
-				
 				
 			</view>
 		</view>
-		<view class="cateTwo">
+		<!-- <view class="cateTwo">
 			<MyTitle color="#0bbbef">魅族声乐</MyTitle>
 			<view class="cateRecommend">
 				<view class="cateRecommendItem">
@@ -250,7 +229,7 @@
 					
 					
 				</view>
-			</view>
+			</view> -->
 		
 	</view>	
 </template>
@@ -263,26 +242,46 @@
 	export default {
 		data() {
 			return {
-				indexData:indexData
+				indexData:indexData,
+				goodslist: ''
 			}
 		},
 		components:{
 			MyTitle,MySwiper,MyHeader
 		},
 		onLoad() {
-			console.log(indexData)
+			console.log(indexData);
+			
 		},
 		created() {
 			
 		},
+		mounted() {
+			this.getgoods();
+		},
 		methods: {
-
+			getgoods() {
+				this.uni_request.get(this.request_list.getgoodslist).then(res =>{
+						if(res.code == 200) {
+							this.goodslist = res.data
+						} else{
+							uni.showToast({
+								icon: 'none',
+								position: 'bottom',
+								title: res.msg
+							});
+						return;
+						}
+					})
+			}
 		}
 	}
 </script>
 
 <style>
 	
+	.goodsleft {float: left; }
+	.goodsright {float: right;}
 	.notice{height: 70rpx;background: #f7f7f7;display: flex;justify-content: center;}
 	.notice .noticeItem{font-size:24rpx;display: flex;align-items: center;margin:0 20rpx;color: #999;}
 	.notice .noticeItem image{width: 36rpx;height: 36rpx;margin-right:10rpx;}
@@ -297,8 +296,8 @@
 	.adBox .adRight image{width: 375rpx;height: 260rpx;display: block;}
 	.cate1Ad{height: 344rpx;width: 100%;display: block;}
 	
-	.product{display: flex;justify-content: space-between;flex-wrap: wrap;}
-	.productItem{background: #fff;width: 370rpx;height: 560rpx;overflow: hidden;margin-top:10rpx}
+	.product{display: flex;justify-content: space-between;flex-wrap: wrap;padding-top: 10rpx;}
+	.productItem{background: #fff;width: 750rpx;height: 240rpx;overflow: hidden; margin: 10rpx 15rpx 15rpx;}
 	.productItem image{height: 316rpx;width: 316rpx;margin:44rpx auto 0;display: block;} 
 	.productName{line-height: 57rpx;display: block;font-size: 28rpx;width: 100%;display: block;text-align: center;}
 	.productDetail{display:flex;align-items:center;width: 346rpx;height: 40rpx;background: #cc0000;margin:10rpx auto;}

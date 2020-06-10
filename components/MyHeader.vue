@@ -9,20 +9,20 @@
 			
 			<view class="header">
 				<view class="headerLeft">
-					<image src="/static/image/search.png" class="search"></image>
+					<!-- <image src="/static/image/search.png" class="search"></image> -->
 				</view>
 				<view class="headerMiddle">
-					<image src="/static/image/logo.png" class="logo"></image>
+					<image src="/static/zen_logo_black.png" class="logo"></image>
 				</view>
 				<view class="headerRight">
-					<image src="/static/image/trolley.png" class="trolley"></image>
-					<image src="/static/image/more.png" class="more"></image>
+					<!-- <image src="/static/image/trolley.png" class="trolley"></image>
+					<image src="/static/image/more.png" class="more"></image> -->
 				</view>
 			</view>
-			<view class="menu">
+			<!-- <view class="menu">
 				<navigator open-type="switchTab"  class="activeMenu" url="/pages/index/index">推荐</navigator>
 				<navigator v-for="(item,index) in content" :key="index" url="/pages/list/list" >{{item.menu}}</navigator>
-			</view>
+			</view> -->
 		</view>
 		<view class="empty">
 			
@@ -38,16 +38,17 @@
 
 <style scoped>
 	.status{height:var(--status-bar-height) ;width: 100%;background: #fff;}
-	.top{background: #fff;
+	.top{	background-color: #FFFFFF;
+
 	
 	
 	position: fixed;width: 100%;z-index: 99;top:0;}
-	.empty{height:180rpx;padding-top:var(--status-bar-height) ;}
+	.empty{height:110rpx;padding-top:var(--status-bar-height) ;}
 	.header{height: 110rpx;display: flex;margin:0 20rpx;
 	align-items: center;justify-content:space-between ;}
-	.headerLeft,.headerMiddle,.headerRight{width: 33.33%;}
+	.headerLeft,.headerMiddle,.headerRight{width: 33.33%; }
 	.search{height: 30rpx;width: 30rpx;}
-	.logo{width: 142rpx;height: 33rpx;}
+	.logo{width: 182rpx;height: 63rpx;}
 	.headerMiddle{display: flex;justify-content: center;}
 	.headerRight{display: flex;align-items: center;justify-content: flex-end;}
 	.headerRight .trolley{height: 36rpx;width: 36rpx;} 

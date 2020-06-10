@@ -134,19 +134,19 @@
 	        "iconPath": "static/image/tabbar1.png",
 	        "selectedIconPath": "static/image/tabbar1-1.png",
 	       "text": "首页"
-	    }, {
+	    },{
+		    "pagePath": "pages/cart/cart",
+		    "iconPath": "static/image/jsq.jpg",
+		    "selectedIconPath": "static/image/tabbar3-1.png",
+		    "text": "算力"
+		}, {
 	        "pagePath": "pages/cate/cate",
 	        "iconPath": "static/image/tabbar2.png",
 	        "selectedIconPath": "static/image/tabbar2-1.png",
-	        "text": "分类"
+	        "text": "发现"
 	    },
 		
-		{
-		    "pagePath": "pages/cart/cart",
-		    "iconPath": "static/image/tabbar3.png",
-		    "selectedIconPath": "static/image/tabbar3-1.png",
-		    "text": "购物车"
-		},
+		
 		{
 		    "pagePath": "pages/member/index",
 		    "iconPath": "static/image/tabbar4.png",

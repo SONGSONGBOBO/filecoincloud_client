@@ -128,26 +128,29 @@
 		</view>
 		<view style="height: 100rpx;"></view>
 		<view class="detail-bottom">
+			
 			<view class="navButton">
-				<image src="../../static/image/tabbar1.png" mode=""></image>
-				首页
+				<!-- <image src="../../static/image/tabbar1.png" mode="" @tap="gotoindex()"></image>
+				首页 -->
+				<image src="../../static/file/syjs.png" mode=""></image>
 			</view>
-			<view class="navButton">
-				<image src="../../static/image/tabbar3.png" mode=""></image>
-				购物车
+			<view class="navButton1">
+				<!-- <image src="../../static/file/syjs.png" mode=""></image> -->
+				<text>111111</text>
 			</view>
-			<view class="trolley" @click="showShopDialog">加入购物车</view>
-			<view class="buy" @click="showShopDialog">立即购买</view>
+			 <MyNum></MyNum>
+			<view class="buy" style="margin-left:0rpx;" @click="showShopDialog">立即购买</view>
 		</view>
 		<!-- 服务组件弹窗 -->
-		<serviceDialog @close="closeService" class="hidden" :class="{show:serviceFlag}"></serviceDialog>
-		<shopDialog @close="closeShopDialog" class="hidden" :class="{show:shopFlag}" @value="value"></shopDialog>
+		<!-- <serviceDialog @close="closeService" class="hidden" :class="{show:serviceFlag}"></serviceDialog>
+		<shopDialog @close="closeShopDialog" class="hidden" :class="{show:shopFlag}" @value="value"></shopDialog> -->
 	</view>
 </template>
 
 <script>
 	import serviceDialog from '../../components/serviceDialog.vue'
 	import shopDialog from '../../components/shopDialog.vue'
+	import MyNum from '../../components/MyNumfile.vue'
 	export default {
 		data() {
 			return {
@@ -159,13 +162,21 @@
 			}
 		},
 		components:{
-			serviceDialog,shopDialog
+			serviceDialog,shopDialog,MyNum
+		},
+		onLoad(option) {
+			console.log(option.id)
 		},
 		created() {
 			this.curprice='299.00';
 			console.log(this.serviceFlag)
 		},
 		methods: {
+			gotoindex(){
+				uni.switchTab({
+					url: '/pages/index/index'
+				})
+			},
 			//获取选中完的商品属性
 			value(data){
 				this.selectAttr=data.text;
@@ -227,10 +238,14 @@ background: #fff;border-bottom: 1rpx solid #e5e5e5;margin-top:20rpx;}
 .tabItem{width: 50%;text-align: center;font-size: 28rpx;}
 .activeTabItem{color: #00C3F5;font-weight: bold;}
 .detail-bottom{position: fixed;bottom:0;z-index: 9;background: #fff;width: 100%;display: flex;height: 100rpx;}
-.buy{height: 100rpx;width: 275rpx;background: #007AFF;text-align: center;color: #fff;font-size: 30rpx;line-height: 100rpx;}
+.buy{height: 100rpx;width: 200rpx;background: #007AFF;text-align: center;color: #fff;font-size: 30rpx;line-height: 100rpx;}
 .trolley{height: 100rpx;flex:1;background: #0BBBEF;text-align: center;color: #fff;font-size: 30rpx;line-height: 100rpx;}
 .navButton{width:100rpx;font-size: 24rpx;text-align: center;color: #999;}
-.navButton image{width: 40rpx;height: 40rpx;display: block;margin:10rpx auto 5rpx;}
+.navButton image{width: 50rpx;height: 50rpx;display: block;margin:25rpx auto 5rpx;}
+.navButton text{font-size: 50rpx; margin-top: 100rpx;}
+
+.navButton1 image{width: 125rpx;height: 50rpx;display: block;margin:25rpx auto 5rpx;}
+.navButton1 text{font-size: 50rpx; margin-top: 100rpx;}
 
 .tabContent{background: #fff;overflow: hidden;}
 .param-title{background: #f5f5f5;height: 80rpx;line-height: 80rpx;margin:20rpx 30rpx 0;font-size: 28rpx;

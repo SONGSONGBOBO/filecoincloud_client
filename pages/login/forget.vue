@@ -27,7 +27,7 @@
 					
 					isShowCode
 					codeText="获取重置码"
-					setTime="30"
+					setTime="120"
 					ref="runCode"
 					@setCode="getVerCode()"
 				></wInput>
@@ -93,7 +93,7 @@
 						position: 'bottom',
 					    title: '模拟倒计时终止'
 					});
-				},3000)
+				},120000)
 			},
 			startRePass() {
 				//重置密码

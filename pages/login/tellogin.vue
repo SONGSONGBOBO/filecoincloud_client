@@ -3,21 +3,27 @@
 		<view class="content">
 			<!-- 头部logo -->
 			<view class="header">
-				<image :src="logoImage"></image>
+				<image src="../../static/zen_logo_s.png"></image>
 			</view>
 			<!-- 主体表单 -->
 			<view class="main">
 				<wInput
 					v-model="phoneData"
-					type="text"
+					type="number"
 					maxlength="11"
-					placeholder="用户名/电话"
+					placeholder="手机号"
 				></wInput>
 				<wInput
-					v-model="passData"
-					type="password"
-					maxlength="11"
-					placeholder="密码"
+					v-model="verCode"
+					type="number"
+					maxlength="4"
+					placeholder="验证码"
+					
+					isShowCode
+					codeText="获取重置码"
+					setTime="120"
+					ref="runCode"
+					@setCode="getVerCode()"
 				></wInput>
 			</view>
 			<wButton 
@@ -42,9 +48,11 @@
 			
 			<!-- 底部信息 -->
 			<view class="footer">
-				<navigator url="forget" open-type="navigate">找回密码</navigator>
+				<!-- <navigator url="/pages/login/forget" open-type="navigate">找回密码</navigator>
+				<text>|</text> -->
+				<navigator url="/pages/login/register" open-type="navigate">注册账号</navigator>
 				<text>|</text>
-				<navigator url="register" open-type="navigate">注册账号</navigator>
+				<navigator url="/pages/login/login" open-type="navigate">密码登录</navigator>
 			</view>
 		</view>
 	</view>
@@ -63,6 +71,7 @@
 				phoneData:'', //用户/电话
 				passData:'', //密码
 				isRotate: false, //是否加载旋转
+				verCode:"", //验证码
 			};
 		},
 		components:{
@@ -74,6 +83,33 @@
 			//this.isLogin();
 		},
 		methods: {
+			getVerCode(){
+				//获取验证码
+				if (_this.phoneData.length != 11) {
+				     uni.showToast({
+				        icon: 'none',
+						position: 'bottom',
+				        title: '手机号不正确'
+				    });
+				    return false;
+				}
+				console.log("获取验证码")
+				this.$refs.runCode.$emit('runCode'); //触发倒计时（一般用于请求成功验证码后调用）
+				uni.showToast({
+				    icon: 'none',
+					position: 'bottom',
+				    title: '模拟倒计时触发'
+				});
+				
+				setTimeout(function(){
+					_this.$refs.runCode.$emit('runCode',0); //假装模拟下需要 终止倒计时
+					uni.showToast({
+					    icon: 'none',
+						position: 'bottom',
+					    title: '模拟倒计时终止'
+					});
+				},120000)
+			},
 			isLogin(){
 				//判断缓存中是否登录过，直接登录
 				// try {
@@ -91,34 +127,66 @@
 				// }
 			},
 		    startLogin(){
+				uni.showToast({
+				    icon: 'none',
+					position: 'bottom',
+				    title: '暂不支持'
+				});
+				return;
 				//登录
 				if(this.isRotate){
 					//判断是否加载中，避免重复点击请求
 					return false;
 				}
+				
 				if (this.phoneData.length == "") {
 				     uni.showToast({
 				        icon: 'none',
 						position: 'bottom',
-				        title: '用户名不能为空'
+				        title: '手机号不能为空'
 				    });
 				    return;
 				}
-		        if (this.passData.length < 5) {
+		         if (this.passData.length < 1) {
 		            uni.showToast({
 		                icon: 'none',
 						position: 'bottom',
-		                title: '密码不正确'
+		                title: '密码不能为空'
 		            });
 		            return;
-		        }
-				
-				console.log("登录成功")
-				
+		        } 
 				_this.isRotate=true
-				setTimeout(function(){
-					_this.isRotate=false
-				},3000)
+				 this.uni_request.postform(this.request_list.login, {
+				        "name":this.phoneData,
+						"pwd":this.passData	
+				    }).then(res =>{
+						if(res.code == 200) {
+							uni.showToast({
+								icon: 'none',
+								position: 'bottom',
+								title: res.msg
+							});
+							
+								_this.isRotate=false
+								
+							uni.switchTab({
+							    url: '/pages/member/index'
+							});
+						} else{
+							_this.isRotate=false
+							uni.showToast({
+								icon: 'none',
+								position: 'bottom',
+								title: res.msg
+							});
+						return;
+						}
+					})
+					
+			
+				
+				
+				
 				// uni.showLoading({
 				// 	title: '登录中'
 				// });

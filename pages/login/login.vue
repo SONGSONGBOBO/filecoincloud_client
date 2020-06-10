@@ -16,7 +16,7 @@
 				<wInput
 					v-model="passData"
 					type="password"
-					maxlength="11"
+					maxlength="30"
 					placeholder="密码"
 				></wInput>
 			</view>
@@ -42,9 +42,11 @@
 			
 			<!-- 底部信息 -->
 			<view class="footer">
-				<navigator url="/pages/login/forget" open-type="navigate">找回密码</navigator>
-				<text>|</text>
+				<!-- <navigator url="/pages/login/forget" open-type="navigate">找回密码</navigator>
+				<text>|</text> -->
 				<navigator url="/pages/login/register" open-type="navigate">注册账号</navigator>
+				<text>|</text>
+				<navigator url="/pages/login/tellogin" open-type="navigate">免密登录</navigator>
 			</view>
 		</view>
 	</view>
@@ -91,11 +93,13 @@
 				// }
 			},
 		    startLogin(){
+				
 				//登录
 				if(this.isRotate){
 					//判断是否加载中，避免重复点击请求
 					return false;
 				}
+				
 				if (this.phoneData.length == "") {
 				     uni.showToast({
 				        icon: 'none',
@@ -104,42 +108,46 @@
 				    });
 				    return;
 				}
-		        if (this.passData.length < 5) {
+		         if (this.passData.length < 1) {
 		            uni.showToast({
 		                icon: 'none',
 						position: 'bottom',
-		                title: '密码不正确'
+		                title: '密码不能为空'
 		            });
 		            return;
-		        }
-				let res = this.uni_request.postform(this.request_list.login, {
-				        "name":this.phoneData,
-						"pwd":this.passData	
-				    })
-				console.log(res.data)
-			
-				/* uni.request({
-				    url: this.request_list.login, //仅为示例，并非真实接口地址。
-				    method: "POST",
-					data: {
-				        "name":this.phoneData,
-						"pwd":this.passData	
-				    },
-				    header: {
-				        'content-type': 'application/x-www-form-urlencoded' //自定义请求头信息
-				    },
-				    success: (res) => {
-						console.log("登录成功")
-				        console.log(res.data);
-				        this.text = 'request success';
-				    }
-				}); */
-				
-				
+		        } 
 				_this.isRotate=true
-				setTimeout(function(){
-					_this.isRotate=false
-				},3000)
+				 this.uni_request.postform(this.request_list.login, {
+				        "name":this.phoneData,
+						"pwd":this.passData	
+				    }).then(res =>{
+						if(res.code == 200) {
+							uni.showToast({
+								icon: 'none',
+								position: 'bottom',
+								title: res.msg
+							});
+							
+								_this.isRotate=false
+								
+							uni.switchTab({
+							    url: '/pages/member/index'
+							});
+						} else{
+							_this.isRotate=false
+							uni.showToast({
+								icon: 'none',
+								position: 'bottom',
+								title: res.msg
+							});
+						return;
+						}
+					})
+					
+			
+				
+				
+				
 				// uni.showLoading({
 				// 	title: '登录中'
 				// });

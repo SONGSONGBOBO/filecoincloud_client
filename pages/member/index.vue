@@ -1,22 +1,28 @@
 <template>
 	<view class="whiteBg">
 		<view class="member-top">
-			<view class="member-set">
+			<!-- <view class="member-set">
 				<i class="iconfont">&#xe614;</i>
 				<i class="iconfont">&#xe612;</i>
-			</view>
+			</view> -->
 			<view class="member-tx">
-				<image src="../../static/image/member-tx.png" mode=""></image>
+				<!-- <image src="../../static/image/member-tx.png" mode=""></image> -->
 				<view class="member-tx-txt">
 					<text>英特网络</text>
 					<text>www.intewl.com</text>
 				</view>
 			</view>
 			<view class="ewm">
-				<image src="../../static/image/ewm.png" mode=""></image>
+				<!-- <image src="../../static/image/ewm.png" mode=""></image> -->
 			</view>
 		</view>
 		<view class="member-icon">
+			<view class="icon-item">
+				<navigator url="../order/order">
+				<image src="../../static/image/member-icon4.png" mode=""></image>
+				<text>全部订单</text>
+				</navigator>
+			</view>
 			<view class="icon-item">
 				<navigator url="../order/order">
 				<image src="../../static/image/member-icon1.png" mode=""></image>
@@ -26,24 +32,19 @@
 			<view class="icon-item">
 				<navigator url="../order/order">
 				<image src="../../static/image/member-icon2.png" mode=""></image>
-				<text>待收货</text>
+				<text>已完成</text>
 				</navigator>
 			</view>
-			<view class="icon-item">
+			<!-- <view class="icon-item">
 				<navigator url="../order/order">
 				<image src="../../static/image/member-icon3.png" mode=""></image>
 				<text>待评价</text>
 				</navigator>
-			</view>
-			<view class="icon-item">
-				<navigator url="../order/order">
-				<image src="../../static/image/member-icon4.png" mode=""></image>
-				<text>全部订单</text>
-				</navigator>
-			</view>
+			</view> -->
+			
 		</view>
 		<view class="member-menu">
-			<navigator url="/pages/address/index">
+			<!-- <navigator url="/pages/address/index">
 				<view class="menu-item" style="border:none">
 					<image src="../../static/image/member-menu1.png" mode=""></image>
 					<text>收货地址</text>
@@ -56,7 +57,7 @@
 			<view class="menu-item">
 				<image src="../../static/image/member-menu3.png" mode=""></image>
 				<text>邀请有礼</text>
-			</view>
+			</view> -->
 			<!-- <view class="menu-item">
 				<image src="../../static/image/member-menu4.png" mode=""></image>
 				<text>优惠券</text>
