@@ -115,6 +115,18 @@
 					"titleNView":false
 				}
 			}
+		},
+		{
+		    "path" : "pages/power/power",
+		    "style" : {
+				"navigationBarTitleText": "算力"
+			}
+		},
+		{
+		    "path" : "pages/found/found",
+		    "style" : {
+				"navigationBarTitleText": "发现"
+			}
 		}
 		
     ],
@@ -135,9 +147,9 @@
 	        "selectedIconPath": "static/image/tabbar1-1.png",
 	       "text": "首页"
 	    },{
-		    "pagePath": "pages/cart/cart",
+		    "pagePath": "pages/power/power",
 		    "iconPath": "static/image/jsq.jpg",
-		    "selectedIconPath": "static/image/tabbar3-1.png",
+		    "selectedIconPath": "static/image/jsq.jpg",
 		    "text": "算力"
 		}, {
 	        "pagePath": "pages/cate/cate",
