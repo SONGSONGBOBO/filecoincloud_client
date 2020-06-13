@@ -19,13 +19,23 @@
 				<label>新品</label>苹果（Apple）ipad2019新款第7代10.2英寸2018款9.7英寸air2更新版平板电脑 金色 19款10.2英寸 32G WLAN版-标配
 			</view>
 			<view class="shop-summary">
-				【11.11提前购，神券疯狂抢】平板抢券立减120元！下单抽万元豪礼~套餐晒图送蓝牙耳机~，每日0点、10点、15点、20点限量发券*点击抢券~ 
-			</view>
-			<view class="shop-price-sale">
+<view style="text-align: center;font-size: 25rpx;color: #000000;">申购说明</view>
+
+<view>*本次限量50台售罄后，平台将为用户采买矿机并于15-20天后正式生效。
+</view>
+<view>*若募资额度未达到合约启动要求，合约不生效，平台将于15-20天内全额退款；若矿机采买价格高于用户支付价格，用户可选择在采购期周期内退款或者加价购买</text>
+</view>
+<view>*本次限量50台售罄后，平台将为用户采买矿机并于15-20天后正式生效。
+</view>
+<view>*若募资额度未达到合约启动要求，合约不生效，平台将于15-20天内全额退款；若矿机采买价格高于用户支付价格，用户可选择在采购期周期内退款或者加价购买			</view>
+</view>
+
+
+			<!-- <view class="shop-price-sale">
 				<view class="shop-price"><text>￥</text>{{curprice}}<label>￥599.00</label></view>
 				<view class="shop-sale">月销量:5000件</view>
-			</view>
-			<view class="shop-assure" @click="showService">
+			</view> -->
+			<!-- <view class="shop-assure" @click="showService">
 				<view class="shop-assure-item">
 					<i class="iconfont">&#xe60d;</i>全场包邮
 				</view>
@@ -35,18 +45,19 @@
 				<view class="shop-assure-more">
 					<i class="iconfont">&#xe60b;</i>
 				</view>
-			</view>
+			</view> -->
 		</view>
-		<view class="selectShop" @click="showShopDialog">
+		<!-- <view class="selectShop" @click="showShopDialog">
 			<view class="selectTxt"><text>规格</text>{{selectAttr}}</view>
 			<view class="shop-assure-more">
 				<i class="iconfont">&#xe60b;</i>
 			</view>
-		</view>
+		</view> -->
 		<view class="shop-content">
 			<view class="tab">
-				<view class="tabItem" :class="{activeTabItem:current==0}" @click="tab(0)">图文详情</view>
-				<view class="tabItem" :class="{activeTabItem:current==1}" @click="tab(1)">规格参数</view>
+				<!-- <view class="tabItem" :class="{activeTabItem:current==0}" @click="tab(0)">图文详情</view>
+				<view class="tabItem" :class="{activeTabItem:current==1}" @click="tab(1)">规格参数</view> -->
+				 <view style="width: 100%;text-align: center;font-size: 28rpx;">产品特色</view>
 			</view>
 			<view class="tabContent" v-show="current==0">
 				<image src="../../static/image/d1.jpg" mode="widthFix"></image>
@@ -77,52 +88,8 @@
 						<text>166g</text>
 					</view>
 				</view>
-				<view class="paramBox">
-					<view class="param-title">基础信息</view>
-					<view class="param-item">
-						<label>品牌</label>
-						<text>魅族</text>
-					</view>
-					<view class="param-item">
-						<label>型号</label>
-						<text>魅族16S Pro</text>
-					</view>
-					<view class="param-item">
-						<label>尺寸</label>
-						<text>151.9*73.4*7.65mm</text>
-					</view>
-					<view class="param-item">
-						<label>电池容量</label>
-						<text>3600mAh</text>
-					</view>
-					<view class="param-item">
-						<label>重量</label>
-						<text>166g</text>
-					</view>
-				</view>
-				<view class="paramBox">
-					<view class="param-title">基础信息</view>
-					<view class="param-item">
-						<label>品牌</label>
-						<text>魅族</text>
-					</view>
-					<view class="param-item">
-						<label>型号</label>
-						<text>魅族16S Pro</text>
-					</view>
-					<view class="param-item">
-						<label>尺寸</label>
-						<text>151.9*73.4*7.65mm</text>
-					</view>
-					<view class="param-item">
-						<label>电池容量</label>
-						<text>3600mAh</text>
-					</view>
-					<view class="param-item">
-						<label>重量</label>
-						<text>166g</text>
-					</view>
-				</view>
+				
+				
 				<view style="height: 30rpx;"></view>
 			</view>
 		</view>
@@ -136,9 +103,22 @@
 			</view>
 			<view class="navButton1">
 				<!-- <image src="../../static/file/syjs.png" mode=""></image> -->
-				<text>111111</text>
+				<text style="color: #007AFF;">1111USDT</text>
 			</view>
-			 <MyNum></MyNum>
+			
+			<view class="MyNum">
+				
+				<view class="numBox">
+					<view class="MyNumBox">
+						<text @click="minus">-</text>
+						<view>{{num}}</view>
+						<text @click="add">+</text>
+					</view>
+					
+				</view>
+				
+			</view>
+			 
 			<view class="buy" style="margin-left:0rpx;" @click="showShopDialog">立即购买</view>
 		</view>
 		<!-- 服务组件弹窗 -->
@@ -158,7 +138,8 @@
 				shopFlag:false,
 				current:0,
 				selectAttr:'请选择商品规格尺寸',
-				curprice:0
+				curprice:0,
+				num:1
 			}
 		},
 		components:{
@@ -172,6 +153,20 @@
 			console.log(this.serviceFlag)
 		},
 		methods: {
+			minus(){
+				if(this.num==1){
+					uni.showToast({
+					    title: '数量不能小于1',
+						'icon':'none'
+					});
+					return;
+				}
+				this.num--
+			},
+			add(){
+			
+				this.num++
+			},
 			gotoindex(){
 				uni.switchTab({
 					url: '/pages/index/index'
@@ -181,6 +176,7 @@
 			value(data){
 				this.selectAttr=data.text;
 				this.curprice=data.price
+				
 			},
 			//显示和关闭服务弹窗
 			showService(){
@@ -192,6 +188,7 @@
 			//显示购买弹窗
 			showShopDialog(){
 				this.shopFlag=true
+				console.log(this.num)
 			},
 			closeShopDialog(){
 				this.shopFlag=false
@@ -204,6 +201,21 @@
 </script>
 
 <style scoped>
+	.MyNum{clear: both;margin: 0 30rpx;}
+		.numBox{display: flex;margin-top:14rpx;}
+		.stock{line-height: 70rpx;color: #999;font-size: 24rpx;height: 70rpx;margin-left:20rpx;}
+		.stock text{padding:0 5rpx;}
+		.MyNum-title{font-size: 28rpx;
+	 color: #999;
+	}
+		.MyNumBox{display: flex;border:1rpx solid #e5e5e5;width: 200rpx;font-size: 28rpx;}
+		.MyNumBox text{width: 70rpx;height: 70rpx;text-align: center;line-height: 70rpx;color: #666;}
+		.MyNumBox view{flex: 1;border-left:1rpx solid #e5e5e5;border-right: 1rpx solid #e5e5e5;
+		text-align: center;line-height: 70rpx;
+		}
+	
+	
+	
 	.hidden{display: none;}
 	.show{display: block;}
 	.selectShop{height: 90rpx;background: #fff;margin-top:20rpx;line-height: 90rpx;
@@ -244,8 +256,8 @@ background: #fff;border-bottom: 1rpx solid #e5e5e5;margin-top:20rpx;}
 .navButton image{width: 50rpx;height: 50rpx;display: block;margin:25rpx auto 5rpx;}
 .navButton text{font-size: 50rpx; margin-top: 100rpx;}
 
-.navButton1 image{width: 125rpx;height: 50rpx;display: block;margin:25rpx auto 5rpx;}
-.navButton1 text{font-size: 50rpx; margin-top: 100rpx;}
+.navButton1 {margin:25rpx auto;}
+.navButton1 text{font-size: 30rpx;height: 10rpx;}
 
 .tabContent{background: #fff;overflow: hidden;}
 .param-title{background: #f5f5f5;height: 80rpx;line-height: 80rpx;margin:20rpx 30rpx 0;font-size: 28rpx;

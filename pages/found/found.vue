@@ -18,7 +18,7 @@
 		
 		<view class="shop-content">
 			<view class="tab">
-				<view class="tabItem" :class="{activeTabItem:current==0}" @click="tab(0)">每日必读</view>
+				<view class="tabItem" :class="{activeTabItem:current==0}" @click="tab(0)">每日币读</view>
 				<view class="tabItem" :class="{activeTabItem:current==1}" @click="tab(1)">公告</view>
 			</view>
 			<view class="tabContent" v-show="current==0">

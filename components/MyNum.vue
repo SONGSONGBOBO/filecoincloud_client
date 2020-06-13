@@ -45,6 +45,7 @@
 					return;
 				}
 				this.num--
+				
 				this.$emit('buynum',this.num)
 			},
 			add(){
@@ -56,6 +57,11 @@
 					return;
 				}
 				this.num++
+				uni.showToast({
+				    title: this.num,
+					'icon':'none'
+				});
+				
 				this.$emit('buynum',this.num)
 			}
 		},
@@ -73,7 +79,7 @@
 	.MyNum-title{font-size: 28rpx;
     color: #999;
    }
-	.MyNumBox{display: flex;border:1rpx solid #e5e5e5;width: 240rpx;font-size: 28rpx;}
+	.MyNumBox{display: flex;border:1rpx solid #e5e5e5;width: 200rpx;font-size: 28rpx;}
 	.MyNumBox text{width: 70rpx;height: 70rpx;text-align: center;line-height: 70rpx;color: #666;}
 	.MyNumBox view{flex: 1;border-left:1rpx solid #e5e5e5;border-right: 1rpx solid #e5e5e5;
 	text-align: center;line-height: 70rpx;
