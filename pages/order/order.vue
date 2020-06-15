@@ -31,54 +31,9 @@
 			</view>
 			</navigator>
 		</view>
-		<view class="order-list">
-			<navigator url="detail" >
-			<view class="order-title">
-				<view class="order-title-time">
-					订单日期:2019-10-29
-				</view>
-				<view class="order-title-status">
-					卖家已支付
-				</view>
-			</view>
-			<shopItem class="borderTop"></shopItem>
-			<view class="order-total">
-				共2件商品&nbsp;&nbsp;&nbsp;合计：<text>¥ 79.00</text>（运费¥ 10.00）    
-			</view>
-			</navigator>
-		</view>
-		<view class="order-list">
-			<navigator url="detail" >
-			<view class="order-title">
-				<view class="order-title-time">
-					订单日期:2019-10-29
-				</view>
-				<view class="order-title-status">
-					卖家已支付
-				</view>
-			</view>
-			<shopItem class="borderTop"></shopItem>
-			<view class="order-total">
-				共2件商品&nbsp;&nbsp;&nbsp;合计：<text>¥ 79.00</text>（运费¥ 10.00）    
-			</view>
-			</navigator>
-		</view>
-		<view class="order-list">
-			<navigator url="detail" >
-			<view class="order-title">
-				<view class="order-title-time">
-					订单日期:2019-10-29
-				</view>
-				<view class="order-title-status">
-					卖家已支付
-				</view>
-			</view>
-			<shopItem class="borderTop"></shopItem>
-			<view class="order-total">
-				共2件商品&nbsp;&nbsp;&nbsp;合计：<text>¥ 79.00</text>（运费¥ 10.00）    
-			</view>
-			</navigator>
-		</view>
+		
+		
+		
 		</view>
 </template>
 

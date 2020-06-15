@@ -16,43 +16,65 @@
 		</swiper>
 		<view class="shop-info">
 			<view class="shop-title">
-				<label>新品</label>苹果（Apple）ipad2019新款第7代10.2英寸2018款9.7英寸air2更新版平板电脑 金色 19款10.2英寸 32G WLAN版-标配
+				<label>新品</label>苹果（Apple）ipad2019新款第7代10.2英寸2018款9.
+			</view>
+			<view class="goodsinfo">
+				<view class="goodsinfo-line">
+					<text class="goods-info-left">合约矿机</text>
+					<text  class="goods-info-right">8卡P106矿机</text>
+				</view>
+				<view class="goodsinfo-line">
+					<text class="goods-info-left">矿机算力</text>
+					<text  class="goods-info-right"> 180MH/s±5%</text>
+				</view>
+				<view class="goodsinfo-line">
+					<text class="goods-info-left">矿机功耗 </text>
+					<text  class="goods-info-right">  950W(ETH)</text>
+				</view>
+				<view class="goodsinfo-line">
+					<text class="goods-info-left">实时日产币 </text>
+					<text  class="goods-info-right"> 0.0000769ETH/MHS</text>
+				</view>
+				<view class="goodsinfo-line">
+					<text class="goods-info-left">电价</text>
+					<text  class="goods-info-right">  $0.0570/度</text>
+				</view>
+				<view class="goodsinfo-line">
+					<text class="goods-info-left">维保费</text>
+					<text  class="goods-info-right"> 按实际情况收取</text>
+				</view>
+				<view class="goodsinfo-line">
+					<text class="goods-info-left">平台佣金</text>
+					<text  class="goods-info-right">  5%</text>
+				</view>
+				<view class="goodsinfo-line">
+					<text class="goods-info-left">单批申购额度</text>
+					<text  class="goods-info-right">50台</text>
+				</view>
+				<view class="goodsinfo-line">
+					<text class="goods-info-left">合约生效周期 </text>
+					<text  class="goods-info-right">本批次售罄之后15-20天</text>
+				</view>
+				
+
 			</view>
 			<view class="shop-summary">
-<view style="text-align: center;font-size: 25rpx;color: #000000;">申购说明</view>
+				
+				<view style="text-align: center;font-size: 25rpx;color: #000000;">申购说明</view>
 
-<view>*本次限量50台售罄后，平台将为用户采买矿机并于15-20天后正式生效。
-</view>
-<view>*若募资额度未达到合约启动要求，合约不生效，平台将于15-20天内全额退款；若矿机采买价格高于用户支付价格，用户可选择在采购期周期内退款或者加价购买</text>
-</view>
-<view>*本次限量50台售罄后，平台将为用户采买矿机并于15-20天后正式生效。
-</view>
-<view>*若募资额度未达到合约启动要求，合约不生效，平台将于15-20天内全额退款；若矿机采买价格高于用户支付价格，用户可选择在采购期周期内退款或者加价购买			</view>
-</view>
+				<view>*本次限量50台售罄后，平台将为用户采买矿机并于15-20天后正式生效。
+				</view>
+				<view>*若募资额度未达到合约启动要求，合约不生效，平台将于15-20天内全额退款；若矿机采买价格高于用户支付价格，用户可选择在采购期周期内退款或者加价购买</text>
+				</view>
+				<view>*本次限量50台售罄后，平台将为用户采买矿机并于15-20天后正式生效。
+				</view>
+				<view>*若募资额度未达到合约启动要求，合约不生效，平台将于15-20天内全额退款；若矿机采买价格高于用户支付价格，用户可选择在采购期周期内退款或者加价购买			</view>
+				</view>
 
-
-			<!-- <view class="shop-price-sale">
-				<view class="shop-price"><text>￥</text>{{curprice}}<label>￥599.00</label></view>
-				<view class="shop-sale">月销量:5000件</view>
-			</view> -->
-			<!-- <view class="shop-assure" @click="showService">
-				<view class="shop-assure-item">
-					<i class="iconfont">&#xe60d;</i>全场包邮
-				</view>
-				<view class="shop-assure-item">
-					<i class="iconfont">&#xe60d;</i>7天无理由退货（激活后不支持）
-				</view>
-				<view class="shop-assure-more">
-					<i class="iconfont">&#xe60b;</i>
-				</view>
-			</view> -->
-		</view>
-		<!-- <view class="selectShop" @click="showShopDialog">
-			<view class="selectTxt"><text>规格</text>{{selectAttr}}</view>
-			<view class="shop-assure-more">
-				<i class="iconfont">&#xe60b;</i>
+			
+			
 			</view>
-		</view> -->
+		
 		<view class="shop-content">
 			<view class="tab">
 				<!-- <view class="tabItem" :class="{activeTabItem:current==0}" @click="tab(0)">图文详情</view>
@@ -119,7 +141,7 @@
 				
 			</view>
 			 
-			<view class="buy" style="margin-left:0rpx;" @click="showShopDialog">立即购买</view>
+			<view class="buy" style="margin-left:0rpx;" @click="buy(1)">立即购买</view>
 		</view>
 		<!-- 服务组件弹窗 -->
 		<!-- <serviceDialog @close="closeService" class="hidden" :class="{show:serviceFlag}"></serviceDialog>
@@ -153,6 +175,11 @@
 			console.log(this.serviceFlag)
 		},
 		methods: {
+			buy(id){
+				uni.navigateTo({
+					url: '/pages/buy/filebuy'
+				})
+			},
 			minus(){
 				if(this.num==1){
 					uni.showToast({
@@ -201,6 +228,11 @@
 </script>
 
 <style scoped>
+	.goodsinfo{font-size: 24rpx;color: #999;margin-top:10rpx;height: 100%;}
+	.goodsinfo-line{font-size: 28rpx;margin: 10rpx auto 10rpx;height: 50rpx;}
+	.goods-info-left{float: left;}
+	.goods-info-right{float: right;color: #333333;}
+	
 	.MyNum{clear: both;margin: 0 30rpx;}
 		.numBox{display: flex;margin-top:14rpx;}
 		.stock{line-height: 70rpx;color: #999;font-size: 24rpx;height: 70rpx;margin-left:20rpx;}
@@ -256,7 +288,7 @@ background: #fff;border-bottom: 1rpx solid #e5e5e5;margin-top:20rpx;}
 .navButton image{width: 50rpx;height: 50rpx;display: block;margin:25rpx auto 5rpx;}
 .navButton text{font-size: 50rpx; margin-top: 100rpx;}
 
-.navButton1 {margin:25rpx auto;}
+.navButton1 {margin:20rpx auto;}
 .navButton1 text{font-size: 30rpx;height: 10rpx;}
 
 .tabContent{background: #fff;overflow: hidden;}

@@ -127,8 +127,18 @@
 		    "style" : {
 				"navigationBarTitleText": "发现"
 			}
+		},
+		{
+		    "path" : "pages/buy/filebuy",
+		    "style" : {
+				"navigationBarTitleText": "购买"
+			}
 		}
 		
+        ,{
+            "path" : "pages/found/detail/detail",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -152,7 +162,7 @@
 		    "selectedIconPath": "static/image/jsq.jpg",
 		    "text": "算力"
 		}, {
-	        "pagePath": "pages/cate/cate",
+	        "pagePath": "pages/found/found",
 	        "iconPath": "static/image/tabbar2.png",
 	        "selectedIconPath": "static/image/tabbar2-1.png",
 	        "text": "发现"

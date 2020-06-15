@@ -18,84 +18,25 @@
 		
 		<view class="shop-content">
 			<view class="tab">
-				<view class="tabItem" :class="{activeTabItem:current==0}" @click="tab(0)">每日币读</view>
-				<view class="tabItem" :class="{activeTabItem:current==1}" @click="tab(1)">公告</view>
+				<view class="tabItem" :class="{activeTabItem:current==0}" @click="tab(0)">公告</view>
+				<!-- <view class="tabItem" :class="{activeTabItem:current==1}" @click="tab(1)">每日币读</view> -->
 			</view>
-			<view class="tabContent" v-show="current==0">
+			<view class="tabContent" v-show="current==1">
 				<image src="../../static/image/d1.jpg" mode="widthFix"></image>
 				<image src="../../static/image/d2.jpg" mode="widthFix"></image>
 				<image src="../../static/image/d3.jpg" mode="widthFix"></image>
 			</view>
-			<view class="tabContent" v-show="current==1">
-				<view class="paramBox">
-					<view class="param-title">基础信息</view>
-					<view class="param-item">
-						<label>品牌</label>
-						<text>魅族</text>
+			<view class="tabContent1" v-show="current==0">
+				<view class="paramBox1" v-for="item in messages" @tap="gotodetail(item.fccMessageId)">
+					<view class="param-title1">{{item.fccMessageTitle}}</view>
+					<view class="param-item1">
+						
+						<text >{{item.fccMessageTime | formatDate}}</text>
+						
 					</view>
-					<view class="param-item">
-						<label>型号</label>
-						<text>魅族16S Pro</text>
-					</view>
-					<view class="param-item">
-						<label>尺寸</label>
-						<text>151.9*73.4*7.65mm</text>
-					</view>
-					<view class="param-item">
-						<label>电池容量</label>
-						<text>3600mAh</text>
-					</view>
-					<view class="param-item">
-						<label>重量</label>
-						<text>166g</text>
-					</view>
+					
 				</view>
-				<view class="paramBox">
-					<view class="param-title">基础信息</view>
-					<view class="param-item">
-						<label>品牌</label>
-						<text>魅族</text>
-					</view>
-					<view class="param-item">
-						<label>型号</label>
-						<text>魅族16S Pro</text>
-					</view>
-					<view class="param-item">
-						<label>尺寸</label>
-						<text>151.9*73.4*7.65mm</text>
-					</view>
-					<view class="param-item">
-						<label>电池容量</label>
-						<text>3600mAh</text>
-					</view>
-					<view class="param-item">
-						<label>重量</label>
-						<text>166g</text>
-					</view>
-				</view>
-				<view class="paramBox">
-					<view class="param-title">基础信息</view>
-					<view class="param-item">
-						<label>品牌</label>
-						<text>魅族</text>
-					</view>
-					<view class="param-item">
-						<label>型号</label>
-						<text>魅族16S Pro</text>
-					</view>
-					<view class="param-item">
-						<label>尺寸</label>
-						<text>151.9*73.4*7.65mm</text>
-					</view>
-					<view class="param-item">
-						<label>电池容量</label>
-						<text>3600mAh</text>
-					</view>
-					<view class="param-item">
-						<label>重量</label>
-						<text>166g</text>
-					</view>
-				</view>
+				
 				<view style="height: 30rpx;"></view>
 			</view>
 		</view>
@@ -118,20 +59,43 @@
 				shopFlag:false,
 				current:0,
 				selectAttr:'请选择商品规格尺寸',
-				curprice:0
+				curprice:0,
+				messages: ''
 			}
 		},
 		components:{
 			serviceDialog,shopDialog,MyNum
 		},
-		onLoad(option) {
-			console.log(option.id)
+		onLoad() {
+			this.getmessages();
 		},
 		created() {
 			this.curprice='299.00';
 			console.log(this.serviceFlag)
 		},
+		
+	
 		methods: {
+				gotodetail(id){
+					uni.navigateTo({
+						url: '/pages/found/detail/detail?id='+id
+					})
+				},
+			getmessages(){
+				this.uni_request.get(this.request_list.getmessages).then(res =>{
+						if(res.code == 200) {
+							this.messages = res.data
+							console.log(this.messages)
+						} else{
+							uni.showToast({
+								icon: 'none',
+								position: 'bottom',
+								title: res.msg
+							});
+						return;
+						}
+					})
+			},
 			gotoindex(){
 				uni.switchTab({
 					url: '/pages/index/index'
@@ -214,4 +178,21 @@ text-indent: 30rpx;}
 border-left:1rpx solid #f5f5f5;border-right: 1rpx solid #f5f5f5;padding: 0 30rpx;display: flex;
 }
 .param-item label{width: 260rpx;color: #999;}
+
+.tabContent1{background: #fff;overflow: hidden;}
+.paramBox1{
+	 border:2px solid darkslategray;
+	
+	            border-radius:30px;
+	
+	box-shadow: 10rpx 10rpx 5rpx #888888;
+	background: #f5f5f5;
+	
+	margin-top: 10rpx;
+}
+.param-title1{height: 100%;line-height: 50rpx;margin:20rpx 30rpx 0rpx 30rpx;font-size: 30rpx;
+text-indent: 0rpx;}
+.param-item1{height: 100%;line-height:50rpx;font-size: 24rpx;margin:0 30rpx 30rpx 0;
+padding: 0 30rpx;display: flex;width: 100%;
+}
 </style>

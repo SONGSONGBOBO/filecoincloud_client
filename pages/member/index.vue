@@ -6,18 +6,31 @@
 				<i class="iconfont">&#xe612;</i>
 			</view> -->
 			<view class="member-tx">
-				<!-- <image src="../../static/image/member-tx.png" mode=""></image> -->
+				 <image src="../../static/image/member-tx.png" mode=""></image> 
 				<view class="member-tx-txt">
 					<text>英特网络</text>
-					<text>www.intewl.com</text>
+					<text>我的资产</text>
 				</view>
+			
+			
 			</view>
+			
 			<view class="ewm">
 				<!-- <image src="../../static/image/ewm.png" mode=""></image> -->
 			</view>
 		</view>
 		<view class="member-icon">
 			<view class="icon-item">
+				
+				<view >
+					
+					<text class="icon-title">我的资产: </text>
+					<view class="icon-data"> 111USDT</view>
+				</view>
+			
+			
+			</view>
+			<!-- <view class="icon-item">
 				<navigator url="../order/order">
 				<image src="../../static/image/member-icon4.png" mode=""></image>
 				<text>全部订单</text>
@@ -34,7 +47,7 @@
 				<image src="../../static/image/member-icon2.png" mode=""></image>
 				<text>已完成</text>
 				</navigator>
-			</view>
+			</view> -->
 			<!-- <view class="icon-item">
 				<navigator url="../order/order">
 				<image src="../../static/image/member-icon3.png" mode=""></image>
@@ -43,25 +56,37 @@
 			</view> -->
 			
 		</view>
+		<view class="member-icon">
+			<view class="icon-item">
+				
+				<view >
+					
+					<text class="icon-title">我的收益: </text>
+					<view class="icon-data"> 111USDT</view>
+				</view>
+			
+			
+			</view>
+		</view>
 		<view class="member-menu">
-			<!-- <navigator url="/pages/address/index">
+			<view class="menu-item">
+				<image src="../../static/image/member-menu3.png" mode=""></image>
+				<text>我的奖励</text>
+			</view> 
+			<navigator url="/pages/address/index">
 				<view class="menu-item" style="border:none">
 					<image src="../../static/image/member-menu1.png" mode=""></image>
-					<text>收货地址</text>
+					<text>我的订单</text>
 				</view>
 			</navigator>
+			<view class="menu-item">
+				<image src="../../static/image/member-menu4.png" mode=""></image>
+				<text>安全设置</text>
+			</view>
 			<view class="menu-item">
 				<image src="../../static/image/member-menu2.png" mode=""></image>
 				<text>在线客服</text>
 			</view>
-			<view class="menu-item">
-				<image src="../../static/image/member-menu3.png" mode=""></image>
-				<text>邀请有礼</text>
-			</view> -->
-			<!-- <view class="menu-item">
-				<image src="../../static/image/member-menu4.png" mode=""></image>
-				<text>优惠券</text>
-			</view> -->
 			<view class="menu-item">
 				<image src="../../static/image/member-menu5.png" mode=""></image>
 				<text>关于我们</text>
@@ -105,10 +130,15 @@ padding-top:50rpx;}
 .member-tx-txt text{height: 40rpx;line-height: 40rpx;display: block;font-size: 30rpx;
 color: #fff;font-weight: bold;}
 
+
 .member-icon{display: flex;border-bottom:20rpx solid #f5f5f5;}
-.icon-item{width: 25%;padding:20rpx 0 10rpx;}
+/* .icon-item{width: 100%;padding:20rpx 0 10rpx;}
 .icon-item image{width:70rpx;height: 56rpx;display: block;margin:0 auto;}
-.icon-item text{line-height: 80rpx;text-align: center;font-size: 28rpx;display: block}
+.icon-item text{line-height: 80rpx;text-align: center;font-size: 28rpx;display: block} */
+.icon-item{width: 100%;padding:20rpx 0 10rpx;}
+.icon-title{line-height: 50rpx;font-size: 31rpx;}
+.icon-data{line-height: 80rpx;font-size: 38rpx;text-align: center;}
+
 
 .menu-item{height: 90rpx;display: flex;align-items: center;
 margin:0 30rpx;font-size: 28rpx;border-top:1rpx solid #e5e5e5;
