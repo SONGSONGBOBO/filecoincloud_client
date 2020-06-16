@@ -9,6 +9,20 @@ App.mpType = 'app'
 
 Vue.prototype.uni_request = uni_request;
 Vue.prototype.request_list = list;
+
+Vue.prototype.$getStorage = Date.now || function async (name) {  
+    return uni.getStorageSync({
+    	key: name,
+		
+    });  
+}; 
+Vue.prototype.$setStorage = Date.now || function (name, data) {  
+    return uni.setStorage({
+    	key: name,
+		data: data
+    })
+}; 
+
 var judy = Vue.extend({            
 	template:'<p>{{message}}</p>',          
 	  data: function () {               

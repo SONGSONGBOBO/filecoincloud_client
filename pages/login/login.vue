@@ -121,18 +121,32 @@
 				        "name":this.phoneData,
 						"pwd":this.passData	
 				    }).then(res =>{
+						
 						if(res.code == 200) {
-							uni.showToast({
-								icon: 'none',
-								position: 'bottom',
-								title: res.msg
-							});
-							
-								_this.isRotate=false
+							uni.setStorage({
+								key:'name',
+								data: this.phoneData
+							})
+							uni.setStorage({
+								key:'userId',
+								data: res.data.userId
+							})
+							setTimeout(function(){
+								uni.showToast({
+									
+									title: res.msg
+								});
 								
-							uni.switchTab({
-							    url: '/pages/member/index'
-							});
+							},2000)
+							
+							setTimeout(function(){
+								
+								_this.isRotate=false
+								uni.switchTab({
+								    url: '/pages/member/index'
+								});
+							},3000)
+							
 						} else{
 							_this.isRotate=false
 							uni.showToast({
