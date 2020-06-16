@@ -1,40 +1,40 @@
 <template>
 	<view>
 		<view class="order-tab">
-			<view class="order-item active-order" v-if="tab==0"  @tap="changetab(0)">
+			<view class="order-item active-order" v-if="tab==0"  @tap="getOrdersByUser(0)">
 				全部订单
 			</view>
-			<view class="order-item " v-if="tab!=0" @tap="changetab(0)">
+			<view class="order-item " v-if="tab!=0" @tap="getOrdersByUser(0)">
 				全部订单
 			</view>
-			<view class="order-item active-order" v-if="tab==1"  @tap="changetab(1)">
+			<view class="order-item active-order" v-if="tab==1"  @tap="getOrdersByUserToDo(1)">
 				待付款
 			</view>
-			<view class="order-item" v-if="tab!=1"  @tap="changetab(1)">
+			<view class="order-item" v-if="tab!=1"  @tap="getOrdersByUserToDo(1)">
 				待付款
 			</view>
-			<view class="order-item active-order" v-if="tab==2" @tap="changetab(2)">
+			<view class="order-item active-order" v-if="tab==2" @tap="getOrdersByUserCompleted(2)">
 				已完成
 			</view>
-			<view class="order-item" v-if="tab!=2" @tap="changetab(2)">
+			<view class="order-item" v-if="tab!=2" @tap="getOrdersByUserCompleted(2)">
 				已完成
 			</view>
-			 <view class="order-item active-order" v-if="tab==3" @tap="changetab(3)">
+			 <view class="order-item active-order" v-if="tab==3" @tap="getOrdersByUserFail(3)">
 				已失效
 			</view> 
-			<view class="order-item" v-if="tab!=3" @tap="changetab(3)">
+			<view class="order-item" v-if="tab!=3" @tap="getOrdersByUserFail(3)">
 				已失效
 			</view> 
 		</view>
-		<view class="order-list">
+		<view class="order-list" v-for="item in orders">
 			<navigator url="detail" >
 			<view class="order-title">
 				<view class="order-title-time">
-					订单日期:2019-10-29
+					{{item.fccOrderCreateTime | formatDate}}
 				</view>
-				<view class="order-title-status">
+				<!-- <view class="order-title-status">
 					卖家已支付
-				</view>
+				</view> -->
 			</view>
 			<view class="order-list">
 				<view class="itemlist">
@@ -56,7 +56,7 @@
 			</view>
 			
 			<view class="order-total">
-				合计：<text>¥ 79.00</text>    
+				合计：<text> {{item.fccOrderPrice}} USDT</text>    
 			</view>
 			</navigator>
 		</view>
@@ -72,18 +72,102 @@
 		data() {
 			return {
 				tab: 0,
+				orders: '',
+				userid: 0
 			}
 		},
 		components:{
 			
 		},
+		onLoad() {
+			this.init();
+			this.getOrdersByUser();
+		},
 		methods: {
+			init(){
+				let _this = this;
+				uni.getStorage({
+					key:"userId",
+					success:function(res){
+						_this.userid = res.data
+						console.log(_this.userid)
+					}
+				})
+			},
+			
 				
-			changetab(id){
+			getOrdersByUser(id){
 				this.tab = id
+				let _this = this;
+				this.uni_request.get(this.request_list.getOrdersByUser)
+				.then(res =>{
+					if(res.code == 200) {
+						_this.orders = res.data
+						console.log(res.data)
+					} else{
+						
+						uni.showToast({
+							icon: 'none',
+							title: res.msg
+						});
+					}
+					
+					})
+			},
+			getOrdersByUserCompleted(id){
+				this.tab = id
+				let _this = this;
+				this.uni_request.get(this.request_list.getOrdersByUserCompleted)
+				.then(res =>{
+					if(res.code == 200) {
+						_this.orders = res.data
+						
+					} else{
+						
+						uni.showToast({
+							icon: 'none',
+							title: res.msg
+						});
+						}
+					})
+			},
+			getOrdersByUserFail(id){
+				let _this = this;
+				this.tab = id
+				this.uni_request.get(this.request_list.getOrdersByUserFail)
+				.then(res =>{
+					if(res.code == 200) {
+						_this.orders = res.data
+						
+					} else{
+						
+						uni.showToast({
+							icon: 'none',
+							title: res.msg
+						});
+						}
+					})
+			},
+			getOrdersByUserToDo(id){
+				let _this = this;
+				this.tab = id
+				this.uni_request.get(this.request_list.getOrdersByUserToDo)
+				.then(res =>{
+					if(res.code == 200) {
+						_this.orders = res.data
+						
+					} else{
+						
+						uni.showToast({
+							icon: 'none',
+							title: res.msg
+						});
+						}
+					})
 			}
 		}
 	}
+	
 </script>
 
 <style>

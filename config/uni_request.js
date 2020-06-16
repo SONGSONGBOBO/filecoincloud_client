@@ -1,12 +1,31 @@
 
 export default {
 	get: async function(url) {
+		let id ;
+		let token ;
+		let _this = this
+		uni.getStorage({
+		    key: 'userId',
+		    success: function (res) {
+		         _this.id = res.data;
+		    }
+		});
+		uni.getStorage({
+		    key: 'token',
+		    success: function (res) {
+		         _this.token = res.data;
+		    }
+		});
+		
 		return new Promise((resolve,reject)=>{
 				uni.request({
 					url: url, //真实接口地址。
 					
 					method: "GET",
-						
+					header:{
+						"userId":_this.id,
+						"token": _this.token
+					},
 					// 成功使用resolve
 					success: (res) => {
 						resolve(res.data)
