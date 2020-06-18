@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-num": "/components/MyNum"
+  },
+  "component": true
+}

@@ -21,7 +21,7 @@
 			</view>
 		</view>
 		<view class="member-icon">
-			<view class="icon-item">
+			<view class="icon-item" @tap="gotofund()">
 				
 				<view >
 					
@@ -36,7 +36,7 @@
 		<view class="member-icon1">
 			<view class="icon-item1">
 				
-				<view >
+				<view @tap="gotoEarnings()">
 					
 					<text class="icon-title1">我的收益: </text>
 					<view class="icon-data1" >
@@ -105,7 +105,7 @@
 		},
 		
 		onLoad() {
-			//this.init()
+			this.init()
 		},
 		onShow() {
 			this.init()
@@ -121,9 +121,42 @@
 					key:"name",
 					success:function(res){
 						_this.username = res.data
+						_this.islogin = true
 						console.log(_this.username)
+					},
+					fail:function (res) {
+						_this.islogin = false
+							console.log(res)
 					}
 				})
+			},
+			gotoEarnings(){
+				if(this.islogin) {
+					uni.navigateTo({
+						url: '/pages/login/login'
+					})
+				} else {
+					uni.showToast({
+					
+					
+						icon:"none",
+						title:"请登录..."
+					});
+				}
+			},
+			gotofund(){
+				if(this.islogin) {
+					uni.navigateTo({
+						url: '/pages/member/fund'
+					})
+				} else {
+					uni.showToast({
+					
+					
+						icon:"none",
+						title:"请登录..."
+					});
+				}
 			},
 			user(){
 					
@@ -138,18 +171,11 @@
 			logout() {
 				setTimeout(function(){
 					uni.showToast({
-						
+						icon:"loading",
 						title:"正在退出..."
 					});
 					uni.clearStorageSync();
-					uni.setStorage({
-						key: "islogin",
-						data: false
-					})
-					uni.setStorage({
-						key: "name",
-						data: "登录/注册"
-					})
+					
 				},500)
 				
 				setTimeout(function(){
@@ -186,12 +212,16 @@ color: #fff;font-weight: bold;}
 /* .icon-item{width: 100%;padding:20rpx 0 10rpx;}
 .icon-item image{width:70rpx;height: 56rpx;display: block;margin:0 auto;}
 .icon-item text{line-height: 80rpx;text-align: center;font-size: 28rpx;display: block} */
-.icon-item{width: 100%;padding:20rpx 0 10rpx;}
+.icon-item{width: 100%;padding:20rpx 0 10rpx;margin:0 30rpx;
+background: url(../../static/image/more.png) no-repeat right center;
+background-size: 27rpx 27rpx;}
 .icon-title{line-height: 50rpx;font-size: 31rpx;}
 .icon-data{line-height: 80rpx;font-size: 38rpx;text-align: center;}
 
 .member-icon1{display: flex;border-bottom:20rpx solid #f5f5f5;height: 100%;}
-.icon-item1{width: 100%;padding:20rpx 0 10rpx;height: 100%;}
+.icon-item1{width: 100%;padding:20rpx 0 10rpx;height: 100%;margin:0 30rpx;
+background: url(../../static/image/more.png) no-repeat right center;
+background-size: 27rpx 27rpx;}
 .icon-title1{line-height: 50rpx;font-size: 31rpx;}
 .icon-data1{width: 70%;padding: 10rpx 15% 10rpx 15%;height: 100%;}
 

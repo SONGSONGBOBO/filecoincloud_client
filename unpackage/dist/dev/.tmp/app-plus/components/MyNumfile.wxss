@@ -1,0 +1,14 @@
+
+.MyNum{clear: both;margin: 0 30rpx;}
+.numBox{display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;margin-top:14rpx;}
+.stock{line-height: 70rpx;color: #999;font-size: 24rpx;height: 70rpx;margin-left:20rpx;}
+.stock text{padding:0 5rpx;}
+.MyNum-title{font-size: 28rpx;
+    color: #999;
+}
+.MyNumBox{display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;border:1rpx solid #e5e5e5;width: 240rpx;font-size: 28rpx;}
+.MyNumBox text{width: 70rpx;height: 70rpx;text-align: center;line-height: 70rpx;color: #666;}
+.MyNumBox view{-webkit-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;border-left:1rpx solid #e5e5e5;border-right: 1rpx solid #e5e5e5;
+	text-align: center;line-height: 70rpx;
+}
+

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "商品列表",
+  "usingComponents": {
+    "my-header": "/components/MyHeader",
+    "my-title": "/components/MyTitle"
+  }
+}

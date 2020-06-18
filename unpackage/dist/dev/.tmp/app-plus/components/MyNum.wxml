@@ -1,0 +1,1 @@
+<view class="MyNum"><text class="MyNum-title">数量</text><view class="numBox"><view class="MyNumBox"><text data-event-opts="{{[['tap',[['minus',['$event']]]]]}}" bindtap="__e">-</text><view>{{num}}</view><text data-event-opts="{{[['tap',[['add',['$event']]]]]}}" bindtap="__e">+</text></view><view class="stock">(库存:<text>{{stock}}</text>件)</view></view></view>

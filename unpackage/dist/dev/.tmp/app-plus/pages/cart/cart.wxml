@@ -1,0 +1,1 @@
+<view class="cart"><image class="cart-empty" src="../../static/image/cartEmpty.png" mode></image><view class="cart-text">亲,你需要登录才能查看购物车哦~</view><navigator class="login" url="../login/login" open-type="switchTab">立即登陆</navigator></view>

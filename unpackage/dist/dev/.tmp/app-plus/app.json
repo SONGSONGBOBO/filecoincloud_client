@@ -1,0 +1,71 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/list/list",
+    "pages/login/login",
+    "pages/detail/detail",
+    "pages/cate/cate",
+    "pages/cart/cart",
+    "pages/search/search",
+    "pages/buy/buy",
+    "pages/member/index",
+    "pages/address/index",
+    "pages/address/add",
+    "pages/order/order",
+    "pages/order/detail",
+    "pages/login/tellogin",
+    "pages/login/forget",
+    "pages/login/register",
+    "pages/power/power",
+    "pages/found/found",
+    "pages/buy/filebuy",
+    "pages/found/detail/detail"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#00b4ff",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/image/tabbar1.png",
+        "selectedIconPath": "static/image/tabbar1-1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/power/power",
+        "iconPath": "static/image/jsq.jpg",
+        "selectedIconPath": "static/image/jsq.jpg",
+        "text": "算力"
+      },
+      {
+        "pagePath": "pages/found/found",
+        "iconPath": "static/image/tabbar2.png",
+        "selectedIconPath": "static/image/tabbar2-1.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/member/index",
+        "iconPath": "static/image/tabbar4.png",
+        "selectedIconPath": "static/image/tabbar4-1.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "nvueCompiler": "weex",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "手机电商项目模板",
+  "compilerVersion": "2.3.3",
+  "usingComponents": {}
+}

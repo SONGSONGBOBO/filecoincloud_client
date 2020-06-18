@@ -1,0 +1,1 @@
+<view class="MyNum"><view class="numBox"><view class="MyNumBox"><text data-event-opts="{{[['tap',[['minus',['$event']]]]]}}" bindtap="__e">-</text><view>{{num}}</view><text data-event-opts="{{[['tap',[['add',['$event']]]]]}}" bindtap="__e">+</text></view></view></view>

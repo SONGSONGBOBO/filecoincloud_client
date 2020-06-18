@@ -1,0 +1,13 @@
+
+.listBanner{width: 100%;height: 392rpx;}
+.product{display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-pack: justify;-webkit-justify-content: space-between;-ms-flex-pack: justify;justify-content: space-between;-webkit-flex-wrap: wrap;-ms-flex-wrap: wrap;flex-wrap: wrap;}
+.productItem{background: #fff;width: 370rpx;height: 560rpx;overflow: hidden;margin-top:10rpx}
+.productItem image{height: 316rpx;width: 316rpx;margin:44rpx auto 0;display: block;}
+.productName{line-height: 57rpx;display: block;font-size: 28rpx;width: 100%;display: block;text-align: center;}
+.productDetail{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;width: 346rpx;height: 40rpx;background: #cc0000;margin:10rpx auto;}
+.productDetail .mark{width: 70rpx;line-height: 40rpx;font-size: 24rpx;color: #fff;text-align: center;}
+.productDetail .detailInfo{width: 275rpx;font-size: 24rpx;text-indent: 10rpx;color: #cc0000;
+	background: #fff;height: 37rpx;-o-text-overflow: ellipsis;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.productPrice{line-height: 60rpx;text-align: center;font-size: 28rpx;color: #c00;}
+.productPrice text{font-size: 24rpx;}
+

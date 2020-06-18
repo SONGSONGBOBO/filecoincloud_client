@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "购买页面",
+  "usingComponents": {
+    "shop-item": "/components/shopItem",
+    "my-address": "/components/MyAddress"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "titleNView": false,
+  "usingComponents": {
+    "my-title": "/components/MyTitle",
+    "my-swiper": "/components/MySwiper",
+    "my-header": "/components/MyHeader"
+  }
+}

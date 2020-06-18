@@ -1,0 +1,18 @@
+
+.serviceDialog.data-v-b47ba8b2{position: fixed;top:0;right:0;bottom:0;left: 0;background: rgba(0,0,0,0.5);z-index: 10;
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;-webkit-box-align: end;-webkit-align-items: flex-end;-ms-flex-align: end;align-items: flex-end;}
+.serviceBox.data-v-b47ba8b2{height: 1070rpx;background: #fff;position: fixed;bottom:0;width: 100%;z-index: 11;}
+.serviceTitle.data-v-b47ba8b2{height: 90rpx;font-size: 32rpx;text-align: center;line-height: 90rpx;}
+.close.data-v-b47ba8b2{position: absolute;top:0;width: 90rpx;width:90rpx;text-align: center;right: 0;
+line-height: 90rpx;}
+.service-content.data-v-b47ba8b2{position: absolute;top: 100rpx;bottom:100rpx;left:0rpx;right:0rpx;}
+.service-item.data-v-b47ba8b2{border-bottom: 1rpx solid #e5e5e5;margin: 0 20rpx;padding:10rpx 0 30rpx;}
+.service-item-title.data-v-b47ba8b2{line-height: 62rpx;font-size: 28rpx;}
+.service-item-title ._i.data-v-b47ba8b2{font-weight: normal;color: #00C3F5;margin-right: 10rpx;float:left;}
+.service-item-txt.data-v-b47ba8b2{font-size: 24rpx;color: #999;padding-left:30rpx;line-height: 34rpx;}
+.service-bottom.data-v-b47ba8b2{height:90rpx ;background: #00C3F5;color: #fff;position: absolute;bottom:0;
+font-size: 28rpx;text-align: center;line-height: 90rpx;width: 100%;}
+

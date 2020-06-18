@@ -1,0 +1,21 @@
+
+.shop-param-list.data-v-335becf8{margin:0 30rpx;clear: both;}
+.shop-param-title.data-v-335becf8{font-size: 28rpx;color: #999;margin-bottom: 15rpx;}
+.shop-param-item.data-v-335becf8{height:70rpx ;padding:0 30rpx;border:1rpx solid #e5e5e5;float:left;
+font-size: 24rpx;margin-right:30rpx;margin-bottom: 15rpx;line-height: 70rpx;color: #666;}
+.activeBtn.data-v-335becf8{border:1rpx solid #00C3F5;color: #00C3F5;}
+.bg.data-v-335becf8{position: fixed;bottom:0;left:0;right:0;top:0;background: rgba(0,0,0,0.5);}
+.scroll.data-v-335becf8{position: absolute;top:220rpx;bottom:90rpx}
+.shopDialog.data-v-335becf8{height: 1070rpx;background: #fff;position: fixed;bottom:0;width: 100%;z-index: 11;}
+.shopDialog-top.data-v-335becf8{height:180rpx;position: relative;border-bottom: 1rpx solid #e5e5e5;}
+.shopDialog-top image.data-v-335becf8{width: 210rpx;height: 210rpx;position: absolute;top:-60rpx;left:30rpx;
+border:1px solid #e5e5e5;-webkit-box-sizing: border-box;box-sizing: border-box;}
+.top-price.data-v-335becf8{font-size: 36rpx;color: #f0415f;margin-left:280rpx;line-height: 50rpx;margin-top:20rpx;}
+.top-price text.data-v-335becf8{font-size: 24rpx;color: #999;text-decoration: line-through;}
+.top-param.data-v-335becf8{font-size: 24rpx;margin-left:280rpx;padding-right: 30rpx;}
+.top-close.data-v-335becf8{position: absolute;top:0;right:30rpx;}
+.shopDialog-bottom.data-v-335becf8{position: absolute;bottom:0;height: 90rpx;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;width: 100%;}
+.shopDialog-bottom-item.data-v-335becf8{width: 50%;text-align: center;line-height: 90rpx;height: 90rpx;font-size: 28rpx;color: #fff;}
+.shopDialog-bottom-item.trolley.data-v-335becf8{background: #0BBBEF;}
+.shopDialog-bottom-item.buy.data-v-335becf8{background: #007AFF;}
+
