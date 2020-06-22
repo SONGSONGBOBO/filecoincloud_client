@@ -143,6 +143,10 @@
             "path" : "pages/member/fund",
             "style" : {}
         }
+        ,{
+            "path" : "pages/member/history",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

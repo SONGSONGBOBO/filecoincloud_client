@@ -10,28 +10,15 @@
 		
 		
 		<view class="member-menu">
-			<view class="menu-item">
-				<image src="../../static/image/member-menu3.png" mode=""></image>
-				<text>我的奖励</text>
-			</view> 
+			
 			<navigator url="/pages/order/order">
-				<view class="menu-item" style="border:none">
-					<image src="../../static/image/member-menu1.png" mode=""></image>
-					<text>我的订单</text>
-				</view>
+				<view class="menu-item">
+					
+					<view>filecoin地址</view>
+					<view>xxxxx</view>
+				</view> 
 			</navigator>
-			<view class="menu-item">
-				<image src="../../static/image/member-menu4.png" mode=""></image>
-				<text>安全设置</text>
-			</view>
-			<view class="menu-item">
-				<image src="../../static/image/member-menu2.png" mode=""></image>
-				<text>在线客服</text>
-			</view>
-			<view class="menu-item">
-				<image src="../../static/image/member-menu5.png" mode=""></image>
-				<text>关于我们</text>
-			</view>
+			
 			
 		</view>
 		
@@ -44,9 +31,9 @@
 	export default {
 		data() {
 			return {
-				username: "登录/注册",
+				name: "我的地址",
 				islogin: false,
-				coins: [1,2,3]
+				coins: ["filecoin"]
 			}
 		},
 		
@@ -59,7 +46,7 @@
 		onHide() {
 			this.init()
 		},
-		methods: {
+		methods: {  
 			
 			init(){
 				let _this = this;
@@ -76,7 +63,7 @@
 					}
 				})
 				uni.setNavigationBarTitle({
-				    title: _this.username
+				    title: _this.name
 				});
 			},
 			gotoEarnings(){
@@ -179,7 +166,7 @@ background-size: 27rpx 27rpx;}
 .icon-title1{line-height: 50rpx;font-size: 31rpx;}
 .icon-data1{width: 70%;padding: 10rpx 15% 10rpx 15%;height: 100%;}
 
-.menu-item{height: 90rpx;display: flex;align-items: center;
+.menu-item{height: 180rpx;display: flex;align-items: center;
 margin:0 30rpx;font-size: 28rpx;border-top:1rpx solid #e5e5e5;
 background: url(../../static/image/more.png) no-repeat right center;
 background-size: 27rpx 27rpx;
