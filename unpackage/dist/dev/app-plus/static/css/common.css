@@ -1,0 +1,83 @@
+.f-row{
+	display: flex;
+	flex-direction: row;
+}
+.f-col{
+	display: flex;
+	flex-direction: column;
+}
+.f-warp{
+	flex-wrap: wrap;
+}
+.f-nowarp{
+	flex-wrap: nowrap;
+}
+.f-jf-center{
+	justify-content: center;
+}
+.f-jf-between{
+	justify-content: space-between;
+}
+.f-jf-around{
+	justify-content: space-around;
+}
+.f-jf-end{
+	justify-content: flex-end;
+}
+.f-jf-start{
+	justify-content: flex-start;
+}
+.f-al-center{
+	align-items: center;
+}
+.f-al-start{
+	align-items: flex-start;
+}
+.f-al-end{
+	align-items: flex-end;
+}
+
+.w-per-10{
+	width: 10%;
+}
+.w-per-20{
+	width: 20%;
+}
+.w-per-30{
+	width: 30%;
+}
+.w-per-40{
+	width: 40%;
+}
+.w-per-50{
+	width: 50%;
+}
+.w-per-60{
+	width: 60%;
+}
+.w-per-70{
+	width: 70%;
+}
+.w-per-80{
+	width: 80%;
+}
+.w-per-90{
+	width: 90%;
+}
+.w-per-100{
+	width: 100%;
+}
+
+.pd-10px{
+	padding: 10px;
+}
+.pd-l-10px{
+	padding-left: 10px;
+}
+.pd-r-10px{
+	padding-right: 10px;
+}
+.text-1x{ font-size: 24rpx;}
+.text-2x{ font-size: 30rpx;}
+.text-3x{ font-size: 36rpx;}
+.text-4x{ font-size: 42rpx;}
