@@ -147,6 +147,10 @@
             "path" : "pages/member/history",
             "style" : {}
         }
+        ,{
+            "path" : "pages/history/history",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

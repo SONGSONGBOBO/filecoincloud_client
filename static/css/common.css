@@ -77,6 +77,7 @@
 .pd-r-10px{
 	padding-right: 10px;
 }
+.text-small{ font-size: 20rpx;}
 .text-1x{ font-size: 24rpx;}
 .text-2x{ font-size: 30rpx;}
 .text-3x{ font-size: 36rpx;}

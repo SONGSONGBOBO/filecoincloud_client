@@ -19,33 +19,13 @@
 		<!-- 导航 -->
 		<view class="nav-x">
 			<!-- 每一项导航 -->
-			<view class="nav-item">
+			<view v-for="(item, index) in navList" 
+			:key="index"
+			@tap="navTap(index)"
+			:class="navIndex==index?'item-active':''"
+			class="nav-item">
 				<image class="item-img" src="../../static/image/u12.png" mode="aspectFill"></image>
-				<text class="item-text">BTC</text>
-			</view>
-			<!-- 每一项导航 end -->
-			<!-- 每一项导航 -->
-			<view class="nav-item item-active">
-				<image class="item-img" src="../../static/image/u12.png" mode="aspectFill"></image>
-				<text class="item-text">BTC</text>
-			</view>
-			<!-- 每一项导航 end -->
-			<!-- 每一项导航 -->
-			<view class="nav-item">
-				<image class="item-img" src="../../static/image/u12.png" mode="aspectFill"></image>
-				<text class="item-text">BTC</text>
-			</view>
-			<!-- 每一项导航 end -->
-			<!-- 每一项导航 -->
-			<view class="nav-item">
-				<image class="item-img" src="../../static/image/u12.png" mode="aspectFill"></image>
-				<text class="item-text">BTC</text>
-			</view>
-			<!-- 每一项导航 end -->
-			<!-- 每一项导航 -->
-			<view class="nav-item">
-				<image class="item-img" src="../../static/image/u12.png" mode="aspectFill"></image>
-				<text class="item-text">BTC</text>
+				<text class="item-text">{{item.name}}</text>
 			</view>
 			<!-- 每一项导航 end -->
 		</view>
@@ -84,7 +64,18 @@
 			return {
 				name: "我的地址",
 				islogin: false,
-				coins: ["filecoin"]
+				coins: ["filecoin"],
+				
+				//导航
+				navIndex: 0,
+				navList:[
+					{name: 'BTC1'},
+					{name: 'BTC2'},
+					{name: 'BTC3'},
+					{name: 'BTC4'},
+					{name: 'BTC5'},
+					{name: 'BTC6'}
+				]
 			}
 		},
 		
@@ -98,6 +89,10 @@
 			this.init()
 		},
 		methods: {  
+			//选择导航
+			navTap(index){
+				this.navIndex = index
+			},
 			
 			init(){
 				let _this = this;
@@ -219,13 +214,13 @@
 			align-items: center;
 			padding: 20rpx @pagePD;
 			.item-img{
-				width: 50rpx;
-				height: 50rpx;
+				width: 40rpx;
+				height: 40rpx;
 			}
 			.item-text{
 				color: #333333;
 				padding-left: 10rpx;
-				font-size: 40rpx;
+				font-size: 30rpx;
 			}
 		}
 		.item-active{
