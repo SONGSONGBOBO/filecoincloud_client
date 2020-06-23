@@ -279,7 +279,6 @@
 </script>
 
 <style>
-	
 	.goodsleft {float: left; }
 	.goodsright {float: right;}
 	.notice{height: 70rpx;background: #f7f7f7;display: flex;justify-content: center;}

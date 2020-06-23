@@ -15,6 +15,9 @@
 
 <style>
 	/*每个页面公共css */
+	@import "colorui/main.css";
+	@import "colorui/icon.css";
+	@import url("~@/static/css/common.css");
 	/* 引入图标字体 */
 	@font-face {
 	 font-family: 'iconfont';

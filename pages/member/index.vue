@@ -133,7 +133,7 @@
 			gotoEarnings(){
 				if(this.islogin) {
 					uni.navigateTo({
-						url: '/pages/login/login'
+						url: '../history/history'
 					})
 				} else {
 					uni.showToast({

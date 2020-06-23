@@ -1,25 +1,24 @@
 <template>
 	<view>
-		<!-- <swiper class="swiper" :indicator-dots="true" :autoplay="true"
+		<swiper class="swiper" :indicator-dots="true" :autoplay="true"
 		 :interval="3000" :duration="500" indicator-active-color="#00c3f5">
 			<swiper-item>
 				<view class="swiper-item">
-					<image src="../../static/image/dimg1.jpg" mode=""></image></view>
+					<image src="../../static/image/dimg1.jpg" mode="aspectFill"></image></view>
 			</swiper-item>
 			<swiper-item>
-				<view class="swiper-item"><image src="../../static/image/dimg2.jpg" mode=""></image></view>
+				<view class="swiper-item"><image src="../../static/image/dimg2.jpg" mode="aspectFill"></image></view>
 			</swiper-item>
 			<swiper-item>
 				<view class="swiper-item">
-					<image src="../../static/image/dimg3.jpg" mode=""></image></view>
+					<image src="../../static/image/dimg3.jpg" mode="aspectFill"></image></view>
 			</swiper-item>
-		</swiper> -->
+		</swiper>
 		
 		
-		<view class="shop-content">
+		<!-- <view class="shop-content">
 			<view class="tab">
 				<view class="tabItem" :class="{activeTabItem:current==0}" @click="tab(0)">公告</view>
-				<!-- <view class="tabItem" :class="{activeTabItem:current==1}" @click="tab(1)">每日币读</view> -->
 			</view>
 			<view class="tabContent" v-show="current==1">
 				<image src="../../static/image/d1.jpg" mode="widthFix"></image>
@@ -39,7 +38,29 @@
 				
 				<view style="height: 30rpx;"></view>
 			</view>
+		</view> -->
+		
+		<!-- 公告容器 -->
+		<view class="found-notice pd-1y pd-1x f-col">
+			<!-- 标题 -->
+			<view class="title">
+				<text class="text-3x color2">公告</text>
+			</view>
+			<!-- 每一条公告 -->
+			<view 
+			v-for="(item, index) in 6"
+			:key="index"
+			class="notice-row f-col pd-1y pd-1x">
+				<text class="text-2x pd-1y">罗杰·弗：比特币受到了区块大小的阻碍</text>
+				<view class="text-1x pd-1y f-row f-jf-between">
+					<text>本文来源: NICK MARINOFF</text>
+					<text>2019-04-22</text>
+				</view>
+			</view>
+			<!-- 每一条公告 end -->
 		</view>
+		<!-- 公告容器 end -->
+		
 		<view style="height: 100rpx;"></view>
 		
 		<!-- 服务组件弹窗 -->
@@ -127,7 +148,47 @@
 	}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+	// 新增样式
+	@pagePD: 25rpx;
+	@Color1: rgb(40, 208, 148);
+	@Color2: #EE7A39;
+	.color1{ color: @Color1; }
+	.color2{ color: @Color2; }
+	.pd-1x{ 
+		padding-right: @pagePD;
+		padding-left: @pagePD;
+	}
+	.pd-2x{
+		padding-right: calc(@pagePD *2);
+		padding-left: calc(@pagePD *2);
+	}
+	.pd-1y{
+		padding-top: @pagePD;
+		padding-bottom: @pagePD;
+	}
+	.pd-2y{
+		padding-top: calc(@pagePD *2);
+		padding-bottom: calc(@pagePD *2);
+	}
+	// 公告
+	.found-notice{
+		background-color: #bcbcbc;
+		width: 750rpx;
+		box-sizing: border-box;
+		.title{
+			padding-bottom: @pagePD;
+		}
+		.notice-row{
+			margin: 10rpx 0;
+			width: 100%;
+			box-sizing: border-box;
+			background-color: #FFFFFF;
+			border-radius: 12px;
+		}
+	}
+	// 新增样式 end
+	
 	.hidden{display: none;}
 	.show{display: block;}
 	.selectShop{height: 90rpx;background: #fff;margin-top:20rpx;line-height: 90rpx;
